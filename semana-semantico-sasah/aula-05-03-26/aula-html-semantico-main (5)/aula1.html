@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Web de Inteligência Artificial</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>🤖 Dashboard de Inteligência Artificial</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#conceitos">Conceitos</a></li>
+          <li><a href="#chatbot">Chatbot</a></li>
+          <li><a href="#analise">Análise de Texto</a></li>
+          <li><a href="#graficos">Gráficos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seção Home -->
+    <section id="home" class="hero">
+      <div class="container">
+        <h2>Inteligência Artificial no Seu Dia a Dia</h2>
+        <p>Explore como a IA está transformando o mundo e aprenda seus conceitos fundamentais.</p>
+        <button class="btn btn-primary" onclick="scrollToSection('conceitos')">Explorar IA</button>
+      </div>
+    </section>
+
+    <!-- Seção Conceitos -->
+    <section id="conceitos" class="conceitos">
+      <div class="container">
+        <h2>Conceitos Fundamentais de IA</h2>
+        <div class="cards-grid">
+          <!-- Card 1: Machine Learning -->
+          <div class="card">
+            <h3>🧠 Machine Learning</h3>
+            <p>Algoritmos que aprendem padrões a partir dos dados.</p>
+            <div class="card-details">
+              <strong>Aplicações:</strong>
+              <ul>
+                <li>Recomendações de filmes</li>
+                <li>Detecção de fraudes</li>
+                <li>Diagnósticos médicos</li>
+                <li>Carros autônomos</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2: Chatbots -->
+          <div class="card">
+            <h3>💬 Chatbots</h3>
+            <p>Assistentes virtuais que conversam com usuários.</p>
+            <div class="card-details">
+              <strong>Benefícios:</strong>
+              <ul>
+                <li>Atendimento 24/7</li>
+                <li>Respostas instantâneas</li>
+                <li>Redução de custos</li>
+                <li>Experiência personalizada</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 3: Reconhecimento de Imagens -->
+          <div class="card">
+            <h3>👁️ Reconhecimento de Imagens</h3>
+            <p>IA que identifica objetos, faces e padrões em imagens.</p>
+            <div class="card-details">
+              <strong>Usos:</strong>
+              <ul>
+                <li>Reconhecimento facial</li>
+                <li>Diagnóstico de doenças</li>
+                <li>Segurança e vigilância</li>
+                <li>Redes sociais</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 4: Processamento de Linguagem -->
+          <div class="card">
+            <h3>📝 Processamento de Linguagem Natural</h3>
+            <p>IA que compreende e gera texto humano.</p>
+            <div class="card-details">
+              <strong>Exemplos:</strong>
+              <ul>
+                <li>Tradução automática</li>
+                <li>Análise de sentimentos</li>
+                <li>Resumo de textos</li>
+                <li>Assistentes de voz</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Chatbot -->
+    <section id="chatbot" class="chatbot">
+      <div class="container">
+        <h2>💬 Simulador de Chatbot</h2>
+        <div class="chatbot-container">
+          <div class="chat-box">
+            <div id="chatMessages" class="chat-messages">
+              <div class="message bot-message">
+                <p>Olá! Sou um assistente de IA. Como posso ajudá-lo?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Digite sua mensagem..."
+              onkeypress="enviarMensagemChat(event)">
+            <button class="btn btn-primary" onclick="enviarMensagemChat()">Enviar</button>
+          </div>
+
+          <div class="chat-sugestoes">
+            <p><strong>Sugestões:</strong></p>
+            <button class="btn btn-secondary" onclick="enviarSugestao('Como a IA funciona?')">Como a IA
+              funciona?</button>
+            <button class="btn btn-secondary" onclick="enviarSugestao('Quais são as aplicações de IA?')">Aplicações de
+              IA</button>
+            <button class="btn btn-secondary" onclick="enviarSugestao('O que é Machine Learning?')">Machine
+              Learning</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Análise de Texto -->
+    <section id="analise" class="analise">
+      <div class="container">
+        <h2>📊 Análise de Texto com IA</h2>
+        <div class="analise-container">
+          <div class="analise-input">
+            <label for="textoAnalise">Digite um texto para análise:</label>
+            <textarea id="textoAnalise" placeholder="Cole seu texto aqui..." rows="6"
+              oninput="analisarTextoEmTempo()"></textarea>
+          </div>
+
+          <div class="analise-resultados">
+            <div class="resultado-item">
+              <h4>📈 Estatísticas</h4>
+              <div class="resultado-content">
+                <p>Palavras: <strong id="contPalavras">0</strong></p>
+                <p>Caracteres: <strong id="contCaracteres">0</strong></p>
+                <p>Parágrafos: <strong id="contParagrafos">0</strong></p>
+                <p>Tempo de leitura: <strong id="tempoLeitura">0</strong> min</p>
+              </div>
+            </div>
+
+            <div class="resultado-item">
+              <h4>😊 Análise de Sentimento</h4>
+              <div class="resultado-content">
+                <div id="sentimentoResultado" class="sentimento-resultado">
+                  <p>Digite algo para análise...</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resultado-item">
+              <h4>🔤 Palavras Mais Frequentes</h4>
+              <div class="resultado-content">
+                <div id="palavrasFrequentes" class="palavras-frequentes">
+                  <p>Digite algo para análise...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Gráficos -->
+    <section id="graficos" class="graficos">
+      <div class="container">
+        <h2>📊 Gráficos de Dados</h2>
+
+        <div class="graficos-grid">
+          <!-- Gráfico 1: Crescimento de IA -->
+          <div class="grafico-card">
+            <h3>Crescimento de IA (2015-2025)</h3>
+            <canvas id="graficoIA"></canvas>
+          </div>
+
+          <!-- Gráfico 2: Aplicações de IA -->
+          <div class="grafico-card">
+            <h3>Principais Aplicações de IA</h3>
+            <canvas id="graficoAplicacoes"></canvas>
+          </div>
+
+          <!-- Gráfico 3: Adoção por Setor -->
+          <div class="grafico-card">
+            <h3>Adoção de IA por Setor (%)</h3>
+            <canvas id="graficoSetores"></canvas>
+          </div>
+
+          <!-- Gráfico 4: Investimento Global -->
+          <div class="grafico-card">
+            <h3>Investimento Global em IA (Bilhões USD)</h3>
+            <canvas id="graficoInvestimento"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Seção contato-->
+    <section id="contato" class="contato">
+      <div class="container">
+        <h2>Entre em contato</h2>
+        <form id="contatoForm"onsubmit='enviarFormulario(event)'>
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text"id='nome'name="nome"required>
+          </div>
+        </form>
+      </div>
+    </section>
